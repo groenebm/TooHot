@@ -1,0 +1,25 @@
+  celsius = (float)raw / 16.0;
+  fahrenheit = celsius * 1.8 + 32.0;
+ // Serial.print("  Temperature = ");
+  //Serial.print(celsius);
+  //Serial.print(" Celsius, ");
+  Serial.print(fahrenheit);
+  Serial.println(" Fahrenheit");
+
+  if (fahrenheit > 115) {
+   analogWrite(GREENPIN, 0);
+   analogWrite(BLUEPIN, 0);
+   analogWrite(REDPIN, 256);
+  }
+
+  else if (fahrenheit < 70 ) {
+   analogWrite(GREENPIN, 20);
+   analogWrite(BLUEPIN, 150);
+   analogWrite(REDPIN, 0);
+
+  }
+  else if (fahrenheit <= 115 && fahrenheit >= 70) {
+   analogWrite(GREENPIN, 256);
+   analogWrite(BLUEPIN, 0);
+   analogWrite(REDPIN, 0);
+  }
